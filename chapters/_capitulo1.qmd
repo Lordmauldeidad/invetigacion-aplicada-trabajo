@@ -1,0 +1,71 @@
+# Capítulo 1: Introducción e información general
+
+## Justificación del Proyecto
+
+La presente investigación es necesaria porque el metajuego de Clash Royale es un fenómeno de alta complejidad que resulta imposible de predecir o entender a simple vista, ya que cambia constantemente debido a los parches de balance mensuales y la adición de nuevas mecánicas como las evoluciones. Al ser un sistema dinámico donde millones de jugadores adoptan estrategias de forma masiva, la única manera real de anticipar el comportamiento del juego es mediante la recolección y procesamiento de un volumen masivo de datos directamente desde la API oficial de Supercell.
+
+### Justificación Teórica.
+El proyecto aporta valor teórico al aplicar conceptos de ciencias de la computación para desarmar un ecosistema competitivo complejo. Esto permite estudiar cómo las modificaciones en variables individuales (atributos de las cartas) alteran el equilibrio general de un sistema dinámico, sirviendo como un caso de estudio real sobre el comportamiento de redes de datos interconectadas.
+
+### Justificación Práctica.
+La utilidad real de este modelo de inteligencia artificial radica en su capacidad de resolver el problema de la incertidumbre en el entorno competitivo, permitiendo predecir con exactitud qué combinaciones y arquetipos dominarán el juego ante futuros parches de balance, ofreciendo una herramienta estratégica aplicable tanto al análisis de videojuegos como a la simulación de escenarios dinámicos.
+
+## Objetivos del Proyecto
+
+### Objetivo General.
+Desarrollar un modelo de inteligencia artificial capaz de predecir tendencias del metajuego de Clash Royale mediante el análisis de datos históricos comprendidos entre 2023 y 2026.
+
+### Objetivos Específicos.
+A continuación se detallan las metas a cumplir:
+
+* Recolectar y procesar datos relacionados con el rendimiento, popularidad y uso de cartas y mazos en Clash Royale durante el período 2023-2026.
+* Analizar patrones temporales y variaciones del metajuego utilizando técnicas de IA.
+* Entrenar y evaluar modelos de inteligencia artificial para predecir cambios y tendencias futuras en el metajuego de Clash Royale.
+* Comparar el rendimiento de distintos modelos predictivos mediante métricas de precisión y exactitud.
+* Identificar los factores que más influyen en la evolución del metajuego, como balance de cartas, frecuencia de uso y efectividad de arquetipos.
+
+## Hipótesis
+
+El análisis de datos históricos mediante modelos de inteligencia artificial permite predecir con precisión los cambios y tendencias futuras en el metajuego de Clash Royale tras la aplicación de parches de balance.
+
+## Metodología
+
+### Tipo y Diseño.
+* **Tipo:** Aplicado y analítico. Se descompone el metajuego en partes para entenderlo.
+* **Diseño:** No experimental y longitudinal (2023-2026). No se altera el juego, solo se observa y analiza cómo evoluciona el meta a lo largo del tiempo.
+
+### Variables.
+* **Variable Dependiente (Lo que se quiere predecir):** El metajuego de Clash Royale (analizado a nivel global, por mazos y por cartas individuales).
+* **Variable Independiente (La herramienta utilizada):** Modelos de IA para series temporales (específicamente LSTM y Random Forest).
+
+### Población y Muestra.
+* **Población:** Todas las partidas y datos globales de Clash Royale.
+* **Muestra:** Los datos de rendimiento, uso y efectividad de cartas/mazos recolectados de la API oficial entre 2023 y 2026.
+
+### Tipo de Investigación.
+Para esta investigación se eligió el método analítico, y la razón es bastante clara: el metajuego de Clash Royale es un fenómeno complejo que no se puede medir de forma directa. Está compuesto por muchas variables que se influyen entre sí, así que para entenderlo y predecirlo hay que ir por partes, descomponiendo el problema en sus elementos más básicos y estudiando cada uno por separado.
+
+El proceso se desarrolla en cuatro etapas concretas:
+
+1. **Observación y descripción:** Todo empieza por recopilar los datos históricos del período 2023-2026, limpiarlos y organizarlos. En esta etapa se definen las variables clave que se van a analizar, como las tasas de victoria y de uso de las cartas, y se identifican los parches de balance y los arquetipos más frecuentes.
+2. **Descomposición y análisis de las partes:** Aquí se entra en detalle. Se separan los distintos factores que influyen en el ecosistema competitivo, como los parches, las temporadas y los arquetipos específicos, para examinar de cerca cómo evoluciona cada uno en términos de uso, rendimiento y tendencias a lo largo del tiempo.
+3. **Identificación de relaciones:** En esta fase se busca entender qué está conectado con qué. Se analiza, por ejemplo, si los cambios de balance en las cartas realmente afectan su nivel de uso, y qué tanto influyen las sinergias entre cartas en el desempeño de un mazo.
+4. **Síntesis y conclusiones:** Finalmente, se integra todo lo aprendido entrenando y evaluando dos modelos de inteligencia artificial, LSTM y Random Forest, para comparar cuál predice mejor las tendencias del metajuego y así construir un sistema predictivo sólido.
+
+## Red de inclusores gráficos
+
+Esta red de inclusores gráficos integra múltiples niveles de granularidad, desde la visión global de la comunidad hasta los detalles técnicos del aprendizaje automático, permitiendo una comprensión profunda de las dinámicas del juego.
+
+### Variable Dependiente: Metajuego de Clash Royale.
+El análisis abarca tres niveles estructurales:
+
+* **Nivel macro:** Examina el *Estado Global del Metajuego* mediante la evolución histórica y tasas de uso y victoria.
+* **Nivel meso:** Se enfoca en el *Rendimiento y Popularidad* del mazo o arquetipos tras los cambios de balance.
+* **Nivel micro:** Detalla el *Comportamiento de cartas individuales* (uso y efectividad dentro del Mazo) y sus sinergias.
+
+### Variable Independiente: Modelos de Inteligencia Artificial.
+El sistema predictivo se evalúa de forma progresiva:
+
+* **Nivel macro:** Define la *IA enfocada a la predicción* mediante su arquitectura y flujo de datos.
+* **Nivel meso:** Analiza el rendimiento mediante *Series temporales* (líneas de tiempo) comparando los modelos LSTM y Random Forest.
+* **Nivel micro:** Se concentra en la *calibración de los hiperparámetros*, análisis de residuos y sobreajuste.

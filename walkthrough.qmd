@@ -1,8 +1,8 @@
 ---
-title: "Predicción del Metajuego de Clash Royale mediante Inteligencia Artificial"
+title: "PREDICCIÓN DEL METAJUEGO EN CLASH ROYALE USANDO INTELIGENCIA ARTIFICIAL CON DATOS DE 2023-2026"
 author:
-  - "Robinson Stalin Cajas Molina"
-  - "Cristian Paul Baraja Simbaña"
+  - "Cajas Molina Robinson Stalin"
+  - "Baraja Simbaña Cristian Paul"
 date: today
 lang: es
 
@@ -14,93 +14,35 @@ format:
       - margin=2.54cm
     number-sections: true
     colorlinks: true
-    toc: true
+    toc: false
+    mainfont: "Times New Roman"
+    pdf-engine: xelatex
+    include-in-header:
+      text: |
+        \let\maketitle\relax
+        \usepackage{indentfirst}
+
+bibliography: chapters/referencias.bib
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl
+execute:
+  warning: false
+  message: false
 ---
 
-\begin{titlepage}
-\begin{center}
+{{< include chapters/_portada.qmd >}}
 
-\vspace*{1cm}
+\tableofcontents
+\newpage
 
-{\Large\textbf{UNIVERSIDAD CENTRAL DEL ECUADOR}}
+{{< include chapters/_resumen.qmd >}}
 
-\vspace{0.5cm}
+{{< include chapters/_capitulo1.qmd >}}
 
-{\large Facultad de Ingeniería y Ciencias Aplicadas}
+{{< include chapters/_resultados.qmd >}}
 
-\vspace{0.3cm}
+{{< include chapters/_resultados_avanzados.qmd >}}
 
-{\large Carrera de Ingeniería en Ciencias de la Computación}
+{{< include chapters/_conclusiones.qmd >}}
 
-\vspace{3cm}
 
-{\Huge\textbf{Predicción del Metajuego de Clash Royale mediante Inteligencia Artificial}}
 
-\vspace{2.5cm}
-
-\textbf{Integrantes}
-
-\vspace{0.3cm}
-
-Robinson Stalin Cajas Molina
-
-Cristian Paul Baraja Simbaña
-
-\vspace{1cm}
-
-\textbf{Asignatura}
-
-Investigación Aplicada
-
-\vspace{1cm}
-
-\textbf{Docente}
-
-Nombre del docente
-
-\vfill
-
-Quito, Ecuador
-
-2026
-
-\end{center}
-\end{titlepage}
-
-# Introducción
-
-La evolución constante del metajuego en Clash Royale influye directamente en la selección de cartas, mazos y estrategias utilizadas por los jugadores. Debido a los cambios de balance introducidos periódicamente por los desarrolladores, resulta relevante analizar si es posible anticipar tendencias futuras mediante técnicas de inteligencia artificial.
-
-# Objetivos
-
-## Objetivo general
-
-Desarrollar un modelo de inteligencia artificial capaz de predecir tendencias del metajuego de Clash Royale a partir de datos históricos.
-
-## Objetivos específicos
-
-- Recopilar datos de partidas competitivas.
-- Analizar patrones de uso de cartas y mazos.
-- Entrenar modelos predictivos.
-- Evaluar el rendimiento de las predicciones obtenidas.
-
-# Metodología
-
-Describir aquí la fuente de datos, el proceso de limpieza y los algoritmos empleados.
-
-# Resultados
-
-Presentar tablas, gráficos y métricas obtenidas.
-
-```{python}
-import os
-print(f"Núcleos de CPU: {os.cpu_count()}")
-```
-
-# Conclusiones
-
-Presentar las conclusiones finales del estudio.
-
-# Referencias
-
-Agregar las referencias bibliográficas utilizadas.

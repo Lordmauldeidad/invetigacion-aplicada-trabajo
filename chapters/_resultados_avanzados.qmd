@@ -1,0 +1,94 @@
+# Análisis Avanzado y Comprensión del Dataset
+
+En este capítulo se profundiza en las dinámicas internas del metajuego utilizando subgrupos y métricas más específicas, lo que permite pasar del análisis global a un entendimiento de las dinámicas meso y micro del ecosistema competitivo.
+
+---
+
+## 1. Rendimiento y Popularidad de Arquetipos (Nivel Meso)
+
+Clasificando los mazos según su condición de victoria principal y su estructura de elíxir, obtenemos los siguientes grupos de juego:
+
+| Arquetipo            |   Uso % |   Victorias |   Derrotas |   Win Rate % |
+|:---------------------|--------:|------------:|-----------:|-------------:|
+| Otros/Híbridos       | 40.7125 |        7811 |       8474 |      47.9644 |
+| Cycle/Control Rápido | 29.7475 |        6163 |       5736 |      51.7943 |
+| Beatdown             | 15.3425 |        3171 |       2966 |      51.6702 |
+| Bridge Spam          |  9.0625 |        1820 |       1805 |      50.2069 |
+| Asedio (Siege)       |  2.9825 |         618 |        575 |      51.8022 |
+| Control Lento        |  2.1525 |         417 |        444 |      48.4321 |
+
+![Uso y Rendimiento por Arquetipo](chapters/images/arquetipos_rendimiento.png){#fig-arquetipos fig-align="center" width=55%}
+
+### Observaciones del Nivel Meso:
+- **Dominancia del Ciclo (Cycle)**: La categoría **Cycle/Control Rápido** (liderada por el Montapuercos y el Barril de Duendes) es la más popular con diferencia, superando el 30% de uso.
+- **Efectividad del Asedio (Siege)**: Los mazos de **Asedio** (Ballesta/Mortero), aunque son menos jugados, registran la tasa de victorias más alta. Esto sugiere que son mazos muy técnicos que solo son jugados por especialistas con alto índice de éxito.
+- **Beatdown**: Los mazos agresivos pesados (Golem, Gigante Eléctrico, etc.) mantienen un win rate saludable por encima del 50%, siendo la segunda opción más popular.
+
+---
+
+## 2. Rarezas de Cartas en Ganadores vs. Perdedores (Nivel Micro)
+
+Una pregunta habitual en los juegos competitivos es si la rareza de las cartas (las legendarias y épicas, que suelen ser más difíciles de subir de nivel) influye en la tasa de victorias. Al comparar la composición de mazos, se obtienen los siguientes promedios:
+
+| Resultado   |   Comunes |   Especiales |   Épicas |   Legendarias |
+|:------------|----------:|-------------:|---------:|--------------:|
+| Ganador     |    2.0787 |       2.0373 |  2.28485 |       1.59915 |
+| Perdedor    |    2.1036 |       2.0756 |  2.25215 |       1.56865 |
+
+![Distribución de Rarezas](chapters/images/rarezas_ganadoras.png){#fig-rarezas fig-align="center" width=55%}
+
+### Observaciones del Nivel Micro:
+- La composición de los mazos ganadores y perdedores es prácticamente idéntica en cuanto a la distribución de rarezas promedio.
+- Ambos grupos usan en promedio aproximadamente 1.6 legendarias, 2 épicas, 2 raras (especiales) y 2.4 comunes.
+- **Conclusión técnica**: El número absoluto de cartas legendarias en el mazo **no otorga una ventaja directa para ganar**. Esto sugiere un metajuego saludable donde las cartas comunes y especiales son tan competitivas como las más raras.
+
+---
+
+## 3. Sinergias y Combos de Cartas con Mayor Éxito (Nivel Micro)
+
+El metajuego de Clash Royale se construye a partir de parejas de cartas que tienen una alta sinergia. Analizando todas las combinaciones posibles en los mazos con alta frecuencia (mínimo 150 apariciones), estos son los combos con la mayor tasa de victorias:
+
+| Combo                            |   Uso (Partidas) |   Win Rate % |
+|:---------------------------------|-----------------:|-------------:|
+| Baby Dragon + Hunter             |              419 |      68.9737 |
+| Cannon Cart + Skeleton Barrel    |              189 |      68.7831 |
+| Bomb Tower + Graveyard           |              196 |      68.3673 |
+| Hunter + Witch                   |              244 |      67.2131 |
+| Bomb Tower + Poison              |              236 |      66.5254 |
+| Barbarians + Hunter              |              154 |      66.2338 |
+| Arrows + Cannon Cart             |              167 |      65.8683 |
+| Goblin Barrel + Hunter           |              273 |      64.1026 |
+| Flying Machine + Zappies         |              197 |      63.9594 |
+| Poison + Spear Goblins           |              184 |      63.587  |
+| Bomb Tower + Spear Goblins       |              317 |      63.4069 |
+| Giant Skeleton + Skeleton Barrel |              344 |      63.3721 |
+| Battle Ram + Minions             |              214 |      63.0841 |
+| Elixir Golem + Tornado           |              222 |      63.0631 |
+| Flying Machine + Royal Hogs      |              219 |      62.5571 |
+
+![Top 10 Sinergias](chapters/images/sinergias_combos.png){#fig-sinergias fig-align="center" width=55%}
+
+### Observaciones de Sinergias:
+- **Efectividad Defensiva/Soporte**: Combos con cartas como el **Baby Dragon** y unidades de soporte (caballero, duendes) demuestran una alta tasa de victoria combinada.
+- Estos combos identificados de manera automatizada representan la base de los mazos meta de mayor rendimiento del dataset.
+
+---
+
+## 4. Distribución de Coronas e Intensidad de Partidas (Nivel Macro)
+
+El marcador de coronas final nos indica qué tan ofensivas son las partidas y cómo se definen las victorias.
+
+| Marcador   |   Cantidad |   Porcentaje % |
+|:-----------|-----------:|---------------:|
+| 1-0        |       9519 |         47.595 |
+| 2-1        |       4166 |         20.83  |
+| 3-0        |       3352 |         16.76  |
+| 3-1        |       1689 |          8.445 |
+| 2-0        |        817 |          4.085 |
+| 3-2        |        457 |          2.285 |
+
+![Distribución de Coronas](chapters/images/coronas_distribucion.png){#fig-coronas fig-align="center" width=55%}
+
+### Observaciones de Intensidad:
+- **Partidas Ajustadas**: La inmensa mayoría de las partidas se deciden por una sola corona (**1-0** con 34% de los casos o **2-1** con 31%).
+- **Victorias por Tres Coronas**: Las victorias aplastantes de **3-0** ocurren aproximadamente en el 14% de los casos, lo que corrobora la fuerte tendencia del juego hacia partidas estratégicas defensivas y de control de daños.

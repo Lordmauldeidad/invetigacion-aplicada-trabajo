@@ -1,0 +1,7 @@
+# Resumen {.unnumbered}
+
+El presente proyecto de investigación tiene como objetivo desarrollar un modelo de inteligencia artificial capaz de predecir las tendencias del metajuego en el videojuego Clash Royale, utilizando datos históricos comprendidos entre los años 2023 y 2026. El entorno competitivo de este juego es un sistema complejo y dinámico debido a las modificaciones mensuales de balance en los atributos de las cartas, la mecánica de las evoluciones, las sinergias entre más de 115 opciones jugables y las tendencias de adopción social de la comunidad.
+
+Para resolver esto, se recolectaron y estructuraron muchos registros de batallas competitivas directamente desde la API pública de Supercell. Utilizando algoritmos de Machine Learning, se agruparon los mazos en arquetipos para identificar el comportamiento real del juego según sus tasas de uso (*use-rate*) y victoria (*win-rate*). Posteriormente, esta base de datos se utilizó para entrenar y evaluar modelos predictivos avanzados, específicamente redes de memoria a largo plazo (LSTM) y Random Forest. Mediante la comparación de sus métricas de precisión y exactitud, el sistema simula el impacto de futuros cambios de balance y predice los cambios de tendencia, identificando los factores que más influyen en la evolución del metajuego.
+
+
