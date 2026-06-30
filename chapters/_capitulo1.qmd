@@ -1,45 +1,60 @@
-# Capítulo 1: Análisis del Problema y Justificación del Sistema Predictivo
+# Capítulo 1: Planteamiento del Problema y Objetivos
 
-## 1. Justificación del Proyecto
+## 1.1 Planteamiento del problema
 
-El metajuego (o "meta") de Clash Royale es un fenómeno de alta complejidad y dinamismo que no se puede modelar de forma trivial mediante reglas fijas o intuición simple. Este sistema competitivo cambia constantemente debido a dos factores primordiales:
+*Clash Royale* es un videojuego competitivo de estrategia en tiempo real en el que dos jugadores se enfrentan utilizando mazos de ocho cartas. Cada carta posee atributos específicos, como costo de elixir, daño, puntos de vida, velocidad, rareza, tipo de unidad y función táctica. La combinación de estas cartas produce mazos con identidades estratégicas distintas, conocidos como arquetipos.
 
-* **Parches de Balance Mensuales:** Modificaciones directas introducidas por el desarrollador (Supercell) que alteran los atributos clave de las cartas (puntos de vida, daño, velocidad de ataque, coste de elíxir o mecánicas especiales).
-* **Adopción Social y Evoluciones:** La comunidad de jugadores reacciona de manera coordinada pero descentralizada, propagando rápidamente mazos dominantes tras el descubrimiento de sinergias óptimas o el lanzamiento de "cartas evolucionadas".
+El metajuego, o *meta*, representa el conjunto de cartas, mazos y estrategias que dominan el entorno competitivo durante un periodo determinado. Entre 2023 y 2026, el metajuego de *Clash Royale* se volvió especialmente dinámico debido a la aparición de evoluciones de cartas, ajustes de balance, cambios en progresión, temporadas competitivas y respuestas rápidas de la comunidad. Supercell introdujo las evoluciones de cartas en 2023, agregando nuevas habilidades a cartas existentes y modificando profundamente la construcción de mazos [@supercell_evolution]. En 2026, las actualizaciones continuaron incorporando nuevas evoluciones, héroes, modos de juego y ajustes de progresión [@supercell_june2026].
 
-Al ser un sistema dinámico multivariante de gran escala, anticipar qué combinaciones y arquetipos reinarán ante un cambio de balance es un problema de gran relevancia científica para la simulación de economías de juego y la teoría de juegos evolutiva. La única vía metodológica rigurosa para abordar este problema es la minería de datos históricos masivos recopilados directamente desde la API oficial de Supercell.
+El problema de investigación consiste en determinar si es posible predecir cambios y tendencias futuras del metajuego mediante inteligencia artificial. Esta tarea es compleja porque el rendimiento de una carta no depende solo de sus estadísticas individuales, sino también de sus sinergias, counters, popularidad, habilidad del jugador, frecuencia de uso y contexto competitivo.
 
-### Justificación Teórica
+## 1.2 Pregunta de investigación
 
-Desde una perspectiva teórica de la Inteligencia Artificial y la Ciencia de Datos, este proyecto permite investigar cómo las modificaciones en variables discretas locales (los atributos individuales de una carta) alteran el equilibrio general de un sistema competitivo interconectado. Sirve como un caso de estudio real sobre el comportamiento de series temporales dinámicas no lineales de alta frecuencia, donde las transiciones de fase (cambios abruptos en las tasas de uso) son inducidas por perturbaciones externas controladas (parches de balance).
+¿Cómo pueden utilizarse técnicas de inteligencia artificial y minería de datos para predecir cambios y tendencias futuras del metajuego de *Clash Royale* durante el periodo 2023-2026?
 
-### Justificación Práctica
+## 1.3 Objetivo general
 
-En el ámbito práctico, el sistema de IA diseñado mitiga la incertidumbre estratégica en los ecosistemas de deportes electrónicos (*eSports*). Permite a los analistas, entrenadores y jugadores profesionales simular y predecir con exactitud científica las tendencias del metajuego antes de que se jueguen torneos cruciales, optimizando la asignación de recursos de entrenamiento y la preparación de contra-estrategias adaptadas a la composición del meta venidero.
+Desarrollar un modelo de inteligencia artificial capaz de predecir cambios y tendencias futuras en el metajuego de *Clash Royale*, utilizando datos relacionados con el rendimiento, popularidad y uso de cartas y mazos durante el periodo 2023-2026.
 
----
+## 1.4 Objetivos específicos
 
-## 2. Naturaleza del Metajuego y Estructura del Problema
+A continuación se detallan las metas a cumplir:
 
-Para diseñar una IA predictiva eficaz, es indispensable formalizar la naturaleza y variables del problema en Clash Royale:
+1. Recolectar y procesar datos relacionados con el rendimiento, popularidad y uso de cartas y mazos en *Clash Royale* durante el período 2023-2026.
+2. Analizar patrones temporales y variaciones del metajuego utilizando técnicas de IA.
+3. Entrenar y evaluar modelos de inteligencia artificial para predecir cambios y tendencias futuras en el metajuego de *Clash Royale*.
+4. Comparar el rendimiento de distintos modelos predictivos mediante métricas de precisión y exactitud.
+5. Identificar los factores que más influyen en la evolución del metajuego, como balance de cartas, frecuencia de uso y efectividad de arquetipos.
 
-### Variables Temporales
-El metajuego de Clash Royale opera en múltiples escalas temporales:
-1. **Escala Macro (Mensual/Temporada):** Cada temporada (generalmente de 28 a 35 días) inicia con la aplicación de parches de balance y eventos competitivos que redefinen la viabilidad de las barajas.
-2. **Escala Meso (Semanal):** Fluctuaciones menores debidas al descubrimiento y masificación de mazos de contra-estrategia (*counter-decks*) diseñados específicamente para derrotar a los mazos más populares de los primeros días de la temporada.
-3. **Escala Micro (Partidas en Tiempo Real):** Secuencias de emparejamiento (*matchmaking*) de alta resolución.
+## 1.5 Justificación
 
-### Influencia de los Parches de Balance
-Los parches de balance actúan como fuerzas exógenas de perturbación en el sistema físico-matemático del metajuego. Un cambio de tan solo un 4% en la velocidad de ataque de una carta de soporte (por ejemplo, el *Baby Dragon* o el *Hunter*) puede desplazar su tasa de victoria por debajo del umbral de viabilidad del 50%, provocando un colapso en cascada de todos los mazos que dependían de su cobertura defensiva.
+La predicción del metajuego es relevante porque permite comprender cómo evoluciona un sistema competitivo complejo. En *Clash Royale*, un cambio de balance sobre una carta puede modificar no solo su tasa de uso, sino también la viabilidad de mazos completos y de arquetipos relacionados. Por ejemplo, una mejora en una condición de victoria puede aumentar su popularidad y, al mismo tiempo, elevar la presencia de cartas diseñadas para contrarrestarla.
 
-### Evolución de Cartas y Arquetipos
-Un mazo en Clash Royale consta exactamente de 8 cartas de una biblioteca de más de 115 opciones. Clasificar de forma aislada cada posible combinación de 8 cartas resulta en un problema combinatorio inmanejable de:
+Desde la ciencia de datos, el metajuego puede representarse como una serie temporal multivariante. Cada ventana temporal contiene señales de popularidad, rendimiento y adopción estratégica. Desde la inteligencia artificial, este problema puede abordarse con modelos tabulares, ensambles de árboles, redes recurrentes y modelos de pronóstico. Desde los eSports analytics, la predicción del meta permite apoyar decisiones de entrenamiento, selección de mazos, preparación de counters y análisis de torneos.
 
-$$\binom{115}{8} \approx 2.45 \times 10^{11} \text{ combinaciones posibles}$$
+## 1.6 Marco conceptual
 
-Por ello, el metajuego se descompone en **Arquetipos** definidos por su condición de victoria (*wincon*) y velocidad de ciclo de elíxir:
-* **Beatdown:** Mazos ofensivos pesados basados en acumular tropas detrás de tanques lentos (Golem, Gigante, Sabueso de Lava).
-* **Cycle/Control Rápido:** Mazos de rotación ágil y bajo costo promedio (Hog Rider, Barril de Duendes, Minero) enfocados en desgastar la torre enemiga y mantener una defensa matemática sumamente optimizada.
-* **Asedio (Siege):** Mazos que colocan estructuras ofensivas en el puente (Ballesta, Mortero) para atacar desde su propio campo.
-* **Bridge Spam:** Mazos enfocados en la presión constante en el puente con unidades veloces e independientes (Ariete de batalla, Montacarneros) para castigar el gasto ineficiente de elíxir del rival.
-* **Control Lento:** Estructuras defensivas robustas con daño letal concentrado y contraataques quirúrgicos (Cementerio, Trío de Mosqueteras).
+El análisis se organiza alrededor de cinco conceptos:
+
+| Concepto | Definición operativa |
+|:---|:---|
+| Carta | Unidad básica del juego con atributos, rareza, costo y función táctica |
+| Mazo | Conjunto de ocho cartas usado por un jugador |
+| Arquetipo | Categoría estratégica del mazo según condición de victoria y estilo de juego |
+| Tasa de uso | Frecuencia relativa con la que aparece una carta, mazo o arquetipo |
+| Tasa de victoria | Porcentaje de victorias obtenido por una carta, mazo o arquetipo |
+
+## 1.7 Arquetipos considerados
+
+Para reducir la complejidad combinatoria, los mazos se agrupan en arquetipos:
+
+| Arquetipo | Descripción |
+|:---|:---|
+| Beatdown | Mazos pesados que acumulan tropas detrás de tanques o condiciones de victoria resistentes |
+| Cycle/Control rápido | Mazos de bajo costo que rotan rápido y presionan de forma constante |
+| Asedio | Mazos basados en estructuras ofensivas como Ballesta o Mortero |
+| Bridge Spam | Mazos que presionan en el puente para castigar gasto ineficiente de elixir |
+| Control lento | Mazos defensivos que buscan contraataques de alto valor |
+| Híbridos | Mazos que combinan varias condiciones de victoria o no encajan en una sola categoría |
+
+Esta clasificación permite transformar millones de combinaciones posibles en grupos interpretables para el análisis predictivo.

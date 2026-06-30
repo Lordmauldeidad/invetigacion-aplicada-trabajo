@@ -13,11 +13,11 @@
 
 {\large Carrera de Computación}
 
-\vspace{3cm}
+\vspace{2.5cm}
 
 {\Huge\textbf{PREDICCIÓN DEL METAJUEGO EN CLASH ROYALE USANDO INTELIGENCIA ARTIFICIAL CON DATOS DE 2023-2026}}
 
-\vspace{2.5cm}
+\vspace{2.2cm}
 
 \textbf{Integrantes:}
 
@@ -29,7 +29,7 @@ Baraja Simbaña Cristian Paul
 
 \vfill
 
-\textbf{Período}
+\textbf{Periodo académico}
 
 2026-2026
 
